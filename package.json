@@ -1,0 +1,28 @@
+{
+  "name": "react-router-cli",
+  "version": "1.0.0",
+  "description": "CLI for working with react-router",
+  "module": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whicencer/react-router-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "react",
+    "react-router",
+    "react-router-cli",
+    "react-router-dom",
+    "react-router-dom-cli"
+  ],
+  "author": "whicencer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whicencer/react-router-cli/issues"
+  },
+  "homepage": "https://github.com/whicencer/react-router-cli#readme"
+}
