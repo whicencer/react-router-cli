@@ -2,10 +2,10 @@
   "name": "react-router-cli",
   "version": "1.0.0",
   "description": "CLI for working with react-router",
-  "module": "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/whicencer/react-router-cli/issues"
   },
-  "homepage": "https://github.com/whicencer/react-router-cli#readme"
+  "homepage": "https://github.com/whicencer/react-router-cli#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
 }
