@@ -16,12 +16,14 @@ inquirer
       case 'Full base routing':
         inquirer.prompt([ { type: 'input', message: 'Folder name with routing', default: 'react-fullbase-routing', name: 'folderName' } ])
           .then((answer) => {
-            console.log(answer.folderName);
             fullBaseRouting(answer.folderName);
           });
         break;
       case 'Router provider':
-          createProvider();
+        inquirer.prompt([ { type: 'input', message: 'Specify the folder in which to place the provider', default: 'providers', name: 'folderName' } ])
+          .then((answer) => {
+            createProvider(answer.folderName);
+          })
       default:
         break;
     }
