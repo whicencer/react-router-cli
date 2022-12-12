@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { createProvider } from './commands/createProvider.js';
+import { createProvider } from './utils/createFiles/createProvider.js';
 import { fullBaseRouting } from './commands/fullBaseRouting.js';
 
 inquirer
@@ -8,22 +8,17 @@ inquirer
       type: 'list',
       message: 'What would you like to generate?',
       name: 'routing',
-      choices: ['Full base routing', 'Router provider'],
+      choices: ['Base routing'],
     }
   ])
   .then((answer) => {
     switch (answer.routing) {
-      case 'Full base routing':
-        inquirer.prompt([ { type: 'input', message: 'Folder name with routing', default: 'react-fullbase-routing', name: 'folderName' } ])
+      case 'Base routing':
+        inquirer.prompt([ { type: 'input', message: 'Folder name with routing', default: 'routing', name: 'folderName' } ])
           .then((answer) => {
             fullBaseRouting(answer.folderName);
           });
         break;
-      case 'Router provider':
-        inquirer.prompt([ { type: 'input', message: 'Specify the folder in which to place the provider', default: 'providers', name: 'folderName' } ])
-          .then((answer) => {
-            createProvider(answer.folderName);
-          })
       default:
         break;
     }
