@@ -4,6 +4,9 @@
   "description": "CLI for working with react-router",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "react-router-cli": "./src/index.js"
+  },
   "scripts": {
     "start": "node ./src/index.js",
     "build": "tsc"

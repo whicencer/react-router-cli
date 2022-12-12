@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 import inquirer from 'inquirer';
-import { createProvider } from './utils/createFiles/createProvider.js';
 import { fullBaseRouting } from './commands/fullBaseRouting.js';
 
 inquirer
