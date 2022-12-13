@@ -1,5 +1,7 @@
 # React router CLI
 
+## What is this library for
+**react-router-cli** - is a library for auto-generating react routing
 ## Get started
 1. **Install package globally**  
 ```npm install --global react-router-cli```
