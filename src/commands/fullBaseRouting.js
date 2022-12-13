@@ -6,9 +6,6 @@ import { createRouting } from '../utils/createFiles/createRouting.js';
 import { getCurrentPath } from '../utils/getCurrentPath.js';
 
 export const fullBaseRouting = (folderName) => {
-  fs.mkdirSync(getCurrentPath(`/src/${folderName}`), (err) => {
-    if (err) throw err;
-  });
   createProvider(folderName);
   createTypings(folderName);
   createRoutes(folderName);
@@ -25,9 +22,7 @@ export const fullBaseRouting = (folderName) => {
     const RouterProvide = Routing.replace(/export default App/gi, 'export default routerProvider(App)');
 
     fs.writeFile(getCurrentPath('/src/App.jsx'), `import Routing from './${folderName}/routing';\nimport { routerProvider } from './${folderName}/router-provider';\n`+RouterProvide, err => {
-      if (err) {
-        throw err;
-      }
+      if (err) throw err;
     });
   });
 

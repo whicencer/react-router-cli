@@ -1,15 +1,13 @@
-const generateRoutes = () => {
+const generateRoutes = (isPrivate = false) => {
   return (
     `
 import { RouteComponent } from './router-typings';
 
-export const publicRoutes: RouteComponent[] = [
-  {
-    path: '/',
-    component: Home,
-    key: 'home',
-  },
-];
+export const publicRoutes: RouteComponent[] = [];
+
+${
+  isPrivate ? `export const privateRoutes: RouteComponent[] = [];` : ''
+}
     `.trim()
   );
 };
