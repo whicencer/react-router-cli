@@ -18,10 +18,9 @@ export const fullBaseRouting = (folderName) => {
       return;
     }
 
-    const Routing = contents.replace(/<\w+>\n\D+\w+\n\D+<\/\w+>/giu, '<div>\n\t\t\t<Routing />\n\t\t</div>');
-    const RouterProvide = Routing.replace(/export default App/gi, 'export default routerProvider(App)');
+    const RouterProvide = contents.replace(/export default App/gi, 'export default routerProvider(App)');
 
-    fs.writeFile(getCurrentPath('/src/App.jsx'), `import Routing from './${folderName}/routing';\nimport { routerProvider } from './${folderName}/router-provider';\n`+RouterProvide, err => {
+    fs.writeFile(getCurrentPath('/src/App.jsx'), `import Routing from './${folderName}/routing';\nimport { routerProvider } from './${folderName}/router-provider';\n\n`+RouterProvide, 'utf8', err => {
       if (err) throw err;
     });
   });
