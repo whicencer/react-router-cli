@@ -5,8 +5,8 @@ import { getCurrentPath } from '../utils/getCurrentPath.js';
 import { fullBaseRouting } from './fullBaseRouting.js';
 import { createRoutesLib } from '../utils/createFiles/createRoutesLib.js';
 
-export const privateRouting = (folderName) => {
-  fullBaseRouting(folderName);
+export const privateRouting = (folderName, pathApp) => {
+  fullBaseRouting(folderName, pathApp);
 
   // add privateRoutes to ./routes.ts
   fs.readFile(getCurrentPath(`/src/${folderName}/routes.ts`), 'utf-8', (err) => {
