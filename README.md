@@ -17,6 +17,8 @@
 ❯ Base routing
   Public/Private routing
 ```
+6. **Specify a path to your App file (ex. `/src/App.tsx`)**  
+***PLEASE, DONT SPECIFY IT LIKE THIS: `./src/App.tsx`***
 
 ### Generated files
 #### Base routing:
