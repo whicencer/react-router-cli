@@ -1,6 +1,6 @@
 {
   "name": "react-router-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "CLI for working with react-router",
   "type": "module",
   "main": "index.js",
