@@ -20,7 +20,7 @@ export const fullBaseRouting = (folderName) => {
 
     const RouterProvide = contents.replace(/export default App/gi, 'export default routerProvider(App)');
 
-    fs.writeFile(getCurrentPath('/src/App.jsx'), `import Routing from './${folderName}/routing';\nimport { routerProvider } from './${folderName}/router-provider';\n\n`+RouterProvide, 'utf8', err => {
+    fs.writeFile(getCurrentPath('/src/App.tsx'), `import Routing from './${folderName}/routing';\nimport { routerProvider } from './${folderName}/router-provider';\n\n`+RouterProvide, 'utf8', err => {
       if (err) throw err;
     });
   });
