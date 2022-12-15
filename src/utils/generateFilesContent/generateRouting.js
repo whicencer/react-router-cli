@@ -1,9 +1,14 @@
 const generateRouting = (isPrivate = false) => {
   return (
     `
-import { publicRoutes, ${isPrivate ? 'privateRoutes' : ''} } from './routes';
-import { PublicRoutes } from './lib/PublicRoutes';
-import { PrivateRoutes } from './lib/PrivateRoutes';
+import { publicRoutes,${isPrivate ? 'privateRoutes' : ''} } from './routes';
+${isPrivate
+  ? `
+  import { PublicRoutes } from './lib/PublicRoutes';
+  import { PrivateRoutes } from './lib/PrivateRoutes';
+  `.trim()
+  : ''
+}
 import { Route, Routes } from 'react-router-dom';
 
 const Routing = () => {
@@ -24,11 +29,12 @@ const Routing = () => {
 
   return (
     <Routes>
-      <Route element={<PublicRoutes />}>
-        {mappedRoutes}
-      </Route>
+      { mappedRoutes }
       ${ isPrivate
         ? `
+          <Route element={<PublicRoutes />}>
+            {mappedRoutes}
+          </Route>
           <Route element={<PrivateRoutes />}>
             {mappedPrivateRoutes}
           </Route>
