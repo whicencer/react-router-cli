@@ -43,4 +43,7 @@
 
 ***Public/Private routing*** 
 - Same things as in ***Base routing***
-- Sofort
+- In `lib` directory specify condition on which private/public routes would work (for both components)  
+**By default it's just variable `isAuth` that imitates that the user is logged in**  
+- In `PrivateRoutes` in `<Navigate to="" />` specify the route to which user will be redirected if the user is not logged in
+- In `PublicRoutes` in `<Navigate to="" />` specify the route to which the user will be redirected if the user is logged in
