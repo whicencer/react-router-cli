@@ -29,7 +29,6 @@ const Routing = () => {
 
   return (
     <Routes>
-      { mappedRoutes }
       ${ isPrivate
         ? `
           <Route element={<PublicRoutes />}>
@@ -39,7 +38,7 @@ const Routing = () => {
             {mappedPrivateRoutes}
           </Route>
         `.trim()
-        : '' }
+        : '{ mappedRoutes }' }
     </Routes>
   );
 };
